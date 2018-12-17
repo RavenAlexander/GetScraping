@@ -1,0 +1,30 @@
+body {
+    background: white;
+
+}
+
+h2 {
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: lightblue;
+}
+h3, h4 {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+h1 {
+    
+    -webkit-text-stroke: 2pt lightblue; 
+    font-weight: bolder;
+    font-size: 72pt;
+}
+
+.jumbotron {
+    background-image: url('../images/oldnews.jpg');
+}
+
+footer {
+    background-color: lightblue;
+    text-align: center;
+}
+
