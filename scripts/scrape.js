@@ -4,11 +4,12 @@ var request = require("request");
 var cheerio = require("cheerio");
 
 var scrape = function (cb) {
-    request("http://www.nytimes.com", function(err, res, body) {
+    request("https://www.reddit.com/r/webdev", function(err, res, body) {
         var $ = cheerio.load(body);
         var articles = [];
-        $(".theme-summary").each(function(i, element) {
+        $("h2.cIujan").each(function(i, element) {
             var head= $(this).children(".story-heading").text().trim();
+            var title = $(element).text();
             var sum = $(this).children(".summary").text().trim();
 
             if(head && sum) {
@@ -16,6 +17,7 @@ var scrape = function (cb) {
                 var sumNeat = sum.replace(/(\r\n|\n|\r|\t|\s+)/gm, " ").trim();
 
                 var dataToAdd = {
+                    title: title,
                     headline: headNeat,
                     summary: sumNeat
                 };
